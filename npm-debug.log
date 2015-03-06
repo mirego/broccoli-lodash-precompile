@@ -1,0 +1,99 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.5.1
+3 info using node@v0.12.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec { raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Volumes/Mirego/oss/broccoli-lodash-precompile',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/cdemers/.npm/broccoli-lodash-precompile/0.0.1/package.tgz not in flight; packing
+9 verbose tar pack [ '/Users/cdemers/.npm/broccoli-lodash-precompile/0.0.1/package.tgz',
+9 verbose tar pack   '/Volumes/Mirego/oss/broccoli-lodash-precompile' ]
+10 verbose tarball /Users/cdemers/.npm/broccoli-lodash-precompile/0.0.1/package.tgz
+11 verbose folder /Volumes/Mirego/oss/broccoli-lodash-precompile
+12 info prepublish broccoli-lodash-precompile@0.0.1
+13 verbose addLocalTarball adding from inside cache /Users/cdemers/.npm/broccoli-lodash-precompile/0.0.1/package.tgz
+14 silly cache afterAdd broccoli-lodash-precompile@0.0.1
+15 verbose afterAdd /Users/cdemers/.npm/broccoli-lodash-precompile/0.0.1/package/package.json not in flight; writing
+16 verbose afterAdd /Users/cdemers/.npm/broccoli-lodash-precompile/0.0.1/package/package.json written
+17 silly publish { name: 'broccoli-lodash-precompile',
+17 silly publish   version: '0.0.1',
+17 silly publish   description: 'will, as its name states, precompile your templates with lodash and output them wrapped inside ES6 modules.',
+17 silly publish   main: 'index.js',
+17 silly publish   repository:
+17 silly publish    { type: 'git',
+17 silly publish      url: 'git://github.com/mirego/broccoli-lodash-precompile.git' },
+17 silly publish   author: { name: 'Charles Demers', email: 'cdemers@mirego.com' },
+17 silly publish   license: 'BSD 3-Clause',
+17 silly publish   bugs: { url: 'https://github.com/mirego/broccoli-lodash-precompile/issues' },
+17 silly publish   keywords: [ 'broccoli-plugin', 'lodash', 'precompile', 'template' ],
+17 silly publish   dependencies: { 'broccoli-filter': '0.1.11', lodash: '3.4.0' },
+17 silly publish   readme: '# broccoli-lodash-precompile\n\n`broccoli-lodash-precompile` will, as its name states, precompile your templates with lodash and output them wrapped inside ES6 modules.\n\n## Usage\n\nThe following example will take all files with the `.html` extension inside `input-tree` and compile them to JS.\n\n```js\n// Brocfile.js\nvar templatePrecompile = require(\'broccoli-lodash-precompile\');\n\nmodule.exports = templatePrecompile(\'templates\', {\n  dataObjectVariable: \'data\', // Defaults to \'locals\'\n  useLodashEscape: false      // Defaults to `true`\n});\n```\n\n## Options\n\n__`localsVariableName`__\n\nBy default lodash uses `with` to create a context inside your templates, but since ES6 modules are in strict mode and `with` is prohibited in strict mode, we have to specify a variable where all locals will be defined.\n\n__`useLodashEscape`__\n\nLodash templates depend on `_.escape` being globally defined and sometimes you don’t want that. So setting this option to `false` will use a local variable inside each template. Note that this is our own implementation of `escape` instead of lodash’s but at the time of this writing, they’re pretty similar.',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: '9198b58fed65dea2f635077a9fee86f52029db6a',
+17 silly publish   homepage: 'https://github.com/mirego/broccoli-lodash-precompile',
+17 silly publish   _id: 'broccoli-lodash-precompile@0.0.1',
+17 silly publish   scripts: {},
+17 silly publish   _shasum: 'e801527dea64d27716ad9903f2e2a71460b1ecd6',
+17 silly publish   _from: '.' }
+18 silly mapToRegistry name broccoli-lodash-precompile
+19 silly mapToRegistry using default registry
+20 silly mapToRegistry registry https://registry.npmjs.org/
+21 silly mapToRegistry uri https://registry.npmjs.org/broccoli-lodash-precompile
+22 verbose publish registryBase https://registry.npmjs.org/
+23 silly publish uploading /Users/cdemers/.npm/broccoli-lodash-precompile/0.0.1/package.tgz
+24 verbose request uri https://registry.npmjs.org/broccoli-lodash-precompile
+25 verbose request sending authorization for write operation
+26 info attempt registry request try #1 at 6:02:00 PM
+27 verbose request id 97979e38cc74fad5
+28 http request PUT https://registry.npmjs.org/broccoli-lodash-precompile
+29 http 403 https://registry.npmjs.org/broccoli-lodash-precompile
+30 verbose headers { date: 'Fri, 06 Mar 2015 23:02:00 GMT',
+30 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+30 verbose headers   'content-type': 'application/json',
+30 verbose headers   'cache-control': 'max-age=60',
+30 verbose headers   'content-length': '230',
+30 verbose headers   'accept-ranges': 'bytes',
+30 verbose headers   via: '1.1 varnish',
+30 verbose headers   'x-served-by': 'cache-jfk1034-JFK',
+30 verbose headers   'x-cache': 'MISS',
+30 verbose headers   'x-cache-hits': '0',
+30 verbose headers   'x-timer': 'S1425682920.583566,VS0,VE92',
+30 verbose headers   'keep-alive': 'timeout=10, max=50',
+30 verbose headers   connection: 'Keep-Alive' }
+31 verbose request invalidating /Users/cdemers/.npm/registry.npmjs.org/broccoli-lodash-precompile on PUT
+32 error publish Failed PUT 403
+33 verbose stack Error: forbidden Attempting to modify version 0.0.1,
+33 verbose stack which was previously published on 2015-03-06T22:57:22.188Z.
+33 verbose stack This is forbidden, to maintain package integrity.
+33 verbose stack Please update the version number and try again.: broccoli-lodash-precompile
+33 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:254:14)
+33 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:178:14)
+33 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:344:22)
+33 verbose stack     at Request.emit (events.js:110:17)
+33 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1239:14)
+33 verbose stack     at Request.emit (events.js:129:20)
+33 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1187:12)
+33 verbose stack     at IncomingMessage.emit (events.js:129:20)
+33 verbose stack     at _stream_readable.js:908:16
+33 verbose stack     at process._tickCallback (node.js:355:11)
+34 verbose statusCode 403
+35 verbose pkgid broccoli-lodash-precompile
+36 verbose cwd /Volumes/Mirego/oss/broccoli-lodash-precompile
+37 error Darwin 14.1.0
+38 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+39 error node v0.12.0
+40 error npm  v2.5.1
+41 error code E403
+42 error forbidden Attempting to modify version 0.0.1,
+42 error which was previously published on 2015-03-06T22:57:22.188Z.
+42 error This is forbidden, to maintain package integrity.
+42 error Please update the version number and try again.: broccoli-lodash-precompile
+43 error If you need help, you may report this error at:
+43 error     <http://github.com/npm/npm/issues>
+44 verbose exit [ 1, true ]
