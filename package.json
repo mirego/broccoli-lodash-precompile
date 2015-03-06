@@ -1,6 +1,6 @@
 {
   "name": "broccoli-lodash-precompile",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "broccoli-lodash-precompile will, as its name states, precompile your templates with lodash and output them wrapped inside ES6 modules.",
   "main": "index.js",
   "repository": {
