@@ -26,7 +26,8 @@ LodashPrecompiler.prototype.processString = function(string) {
     output += '\n';
   }
 
-  return 'export default ' + _.template(string) + ';';
+  output += 'export default ' + _.template(string) + ';';
+  return output;
 };
 
 LodashPrecompiler.prototype.copyEscapeFunction = function() {
